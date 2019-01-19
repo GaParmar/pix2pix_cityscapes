@@ -5,7 +5,6 @@ import torch
 import models
 import data
 
-
 class BaseOptions():
     """This class defines options used during both training and test time.
 
