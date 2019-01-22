@@ -23,9 +23,11 @@ from options.train_options import TrainOptions
 from data import create_dataset
 from models import create_model
 import pdb
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
-    pdb.set_trace()
     opt = TrainOptions().parse() 
     dataset = create_dataset(opt)  
     dataset_size = len(dataset)   
@@ -47,6 +49,8 @@ if __name__ == '__main__':
         epoch_iter = 0                  
 
         for i, data in enumerate(dataset):  # inner loop within one epoch
+            
+            pdb.set_trace()
             # timer for computation per iteration
             iter_start_time = time.time()  
             if total_iters % opt.print_freq == 0:
