@@ -151,7 +151,7 @@ class CityscapeDataset(BaseDataset):
 def make_n_channels(img):
     # print("inside", img.size)
     device = torch.device('cpu')
-    X = torch.zeros([30, 256, 256], dtype=torch.torch.uint8, device=device)
+    X = torch.zeros([30, 256, 256], dtype=torch.torch.float, device=device)
     for x in range(256):
         for y in range(256):
             rgb = img.getpixel((y, x))
