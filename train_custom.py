@@ -23,16 +23,17 @@ from options.train_options import TrainOptions
 from data import create_dataset
 from models import create_model
 import pdb
-import cv2
+# import cv2
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
+
 
 if __name__ == '__main__':
     opt = TrainOptions().parse() 
     dataset = create_dataset(opt)  
     dataset_size = len(dataset)   
     print('The number of training images = %d' % dataset_size)
-
+    
     model = create_model(opt)     
     model.setup(opt)               
 
@@ -49,8 +50,8 @@ if __name__ == '__main__':
         epoch_iter = 0                  
 
         for i, data in enumerate(dataset):  # inner loop within one epoch
-            
-            pdb.set_trace()
+            print(i)
+            # sanity(data["B"][0])
             # timer for computation per iteration
             iter_start_time = time.time()  
             if total_iters % opt.print_freq == 0:
